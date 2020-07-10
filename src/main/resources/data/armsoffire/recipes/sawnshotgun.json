@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "armsoffire",
+  "pattern": [
+    "IL ",
+    "II ",
+    "LI "
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "tag": "minecraft:logs"
+    }
+  },
+  "result": {
+    "item": "armsoffire:sawnoff_shotgun",
+    "count": 1
+  }
+}

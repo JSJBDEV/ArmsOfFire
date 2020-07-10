@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "armsoffire",
+  "version": "${version}",
+
+  "name": "Arms Of Fire",
+  "description": "A fabric gun mod.",
+  "authors": [
+    "Acro"
+  ],
+  "contact": {
+    "homepage": "http://acro.rf.gd",
+    "sources": "https://github.com/JSJBDEV/ArmsOfFire"
+  },
+
+  "license": "MIT",
+  "icon": "assets/armsoffire/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "gd.rf.acro.armsoffire.ArmsOfFire"
+    ],
+    "client":
+    [
+      "gd.rf.acro.armsoffire.ClientInit"
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
