@@ -55,6 +55,7 @@ public class BulletEntity extends SnowballEntity {
                 extra=3;
             }
             entityHitResult.getEntity().damage(DamageSource.mob(this.attack),this.gunBox.getDamage()+extra);
+            entityHitResult.getEntity().timeUntilRegen=0;
             if(gunBox.getExplosionSize()>0)
             {
                 world.createExplosion(this,this.getX(),this.getY(),this.getZ(),gunBox.getExplosionSize(), Explosion.DestructionType.DESTROY);
