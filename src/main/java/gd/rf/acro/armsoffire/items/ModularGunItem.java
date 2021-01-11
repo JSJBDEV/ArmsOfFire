@@ -57,7 +57,7 @@ public class ModularGunItem extends Item {
                     }
                 }
             }
-            user.getStackInHand(hand).setCooldown(this.gunBox.getCooldown());
+            user.getItemCooldownManager().set(user.getStackInHand(hand).getItem(),this.gunBox.getCooldown());
 
         }
         return super.use(world, user, hand);
@@ -86,7 +86,7 @@ public class ModularGunItem extends Item {
                 extra=5;
                player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,10));
             }
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,10,this.gunBox.getScopeAmount()+extra));
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,10,this.gunBox.getScopeAmount()+extra,true,false));
         }
         if(ClientInit.reload.isPressed() && selected)
         {
