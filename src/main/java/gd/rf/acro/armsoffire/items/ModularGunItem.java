@@ -88,12 +88,15 @@ public class ModularGunItem extends Item {
             }
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS,10,this.gunBox.getScopeAmount()+extra,true,false));
         }
-        if(ClientInit.reload.isPressed() && selected)
+        if (world.isClient) 
         {
-            entity.playSound(SoundEvents.BLOCK_IRON_DOOR_CLOSE,1,1);
-            PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
-            passedData.writeBoolean(true);
-            ClientSidePacketRegistry.INSTANCE.sendToServer(ArmsOfFire.RELOAD_GUN,passedData);
+            if(ClientInit.reload.isPressed() && selected)
+            {
+                entity.playSound(SoundEvents.BLOCK_IRON_DOOR_CLOSE,1,1);
+                PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
+                passedData.writeBoolean(true);
+                ClientSidePacketRegistry.INSTANCE.sendToServer(ArmsOfFire.RELOAD_GUN,passedData);
+            }
         }
     }
 
